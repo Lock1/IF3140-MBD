@@ -2,11 +2,13 @@ from operator import itemgetter
 
 #Resource with default version=0, rts & wts =0
 #X[i][0] = represent name of Resource, X[i][1] = represent version, X[i][2] = represent value, X[i][3] = represent rts, X[i][4] = represent wts
+#u can add or edit resource
 X=[["X",0,10,0,0]]
 Y=[["Y",0,20,0,0]]
 
 #Transaction with Timestamp 1 and 2
 #Trn = Timestamp
+#u can add or edit Timestamp
 Tr1 = 1
 Tr2 = 2
 
@@ -49,8 +51,10 @@ def write(a,b):
                     return False
 
 
-#Example of some Schedule with format [operation, Timestamp, Resource]
-Schedule=[["r",Tr1,X],["w",Tr2,X],["w",Tr2,Y],["w",Tr1,Y]]   
+#Example of some Schedule with format [operation, Timestamp, Resource], edit this Schedule if u want a different scenario
+Schedule=[["r",Tr1,X],["w",Tr2,X],["w",Tr2,Y],["w",Tr1,Y]] 
+#example for Schedule for Rollback scenario
+#Schedule=[["r",Tr1,X],["w",Tr2,X],["w",Tr2,Y],["w",Tr1,Y]]
 end=True
 for transaction in Schedule:
     if(transaction[0]=="r"):
